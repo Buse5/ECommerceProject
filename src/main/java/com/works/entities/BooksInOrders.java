@@ -16,20 +16,18 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 public class BooksInOrders implements Serializable {
-    private static final long serialVersionUID = -3819883511505235030L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bookInOrderId;
 
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JsonIgnore
-    private Carts cart;
+    private Cart cart;
 
     @ManyToOne()
     @JoinColumn(name = "orderId")
     @JsonIgnore
-    private Orders orders;
+    private Order orders;
 
     @NotEmpty
     private String bookId;
@@ -81,12 +79,12 @@ public class BooksInOrders implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BooksInOrders that = (BooksInOrders) o;
-        return bookInOrderId.equals(that.bookInOrderId) &&
-                bookId.equals(that.bookId) &&
-                bookName.equals(that.bookName) &&
-                bookDescription.equals(that.bookDescription) &&
-                bookPrice.equals(that.bookPrice) &&
-                bookCategoryType.equals(that.bookCategoryType);
+        return Objects.equals(bookInOrderId,that.bookInOrderId) &&
+                Objects.equals(bookId,that.bookId) &&
+                Objects.equals(bookName,that.bookName) &&
+                Objects.equals(bookDescription,that.bookDescription) &&
+                Objects.equals(bookPrice,that.bookPrice) &&
+                Objects.equals(bookCategoryType,that.bookCategoryType);
     }
 
     @Override

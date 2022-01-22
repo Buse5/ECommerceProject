@@ -18,7 +18,7 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
-public class Orders implements Serializable {
+public class Order implements Serializable {
 
     private static final long serialVersionUID = -3819883511505235030L;
 
@@ -55,12 +55,12 @@ public class Orders implements Serializable {
     @UpdateTimestamp
     private LocalDateTime updateTime;
 
-    public Orders(Users buyer) {
+    public Order(Users buyer) {
         this.buyerEmail = buyer.getEmail();
         this.buyerName = buyer.getName();
         this.buyerPhone = buyer.getPhone();
         this.buyerAddress = buyer.getAddress();
-        this.orderTotalAmount = buyer.getCart().getProducts().stream()
+        this.orderTotalAmount = buyer.getCart().getBooks().stream()
                 .map(item -> item.getBookPrice()
                         .multiply(new BigDecimal(item.getCount())))
                 .reduce(BigDecimal::add).orElse(new BigDecimal(0));

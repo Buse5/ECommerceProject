@@ -13,7 +13,7 @@ import java.util.Set;
 @Data
 @Entity
 @NoArgsConstructor
-public class Carts implements Serializable {
+public class Cart implements Serializable {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,14 +25,14 @@ public class Carts implements Serializable {
     private Users user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "cart")
-    private Set<BooksInOrders> products = new HashSet<>();
+    private Set<BooksInOrders> books = new HashSet<>();
 
     @Override
     public String toString() {
-        return "Cart{" + "cartId=" + cartId + ", products=" + products + '}';
+        return "Cart{" + "cartId=" + cartId + ", products=" + books + '}';
     }
 
-    public Carts(Users user) {
+    public Cart(Users user) {
         this.user = user;
     }
 }

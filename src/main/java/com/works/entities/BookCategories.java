@@ -1,16 +1,19 @@
 package com.works.entities;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Data
-public class BookCategories {
+@DynamicUpdate
+public class BookCategories implements Serializable {
 
     @Id
     @GeneratedValue

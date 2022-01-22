@@ -45,7 +45,7 @@ public class Users implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     @JsonIgnore
-    private Carts cart;
+    private Cart cart;
 
     @Override
     public String toString() {
