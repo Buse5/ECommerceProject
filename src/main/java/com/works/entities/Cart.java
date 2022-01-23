@@ -29,7 +29,7 @@ public class Cart implements Serializable {
 
     @Override
     public String toString() {
-        return "Cart{" + "cartId=" + cartId + ", products=" + books + '}';
+        return "Cart{" + "cartId=" + cartId + ", books=" + books + '}';
     }
 
     public Cart(Users user) {

@@ -1,8 +1,11 @@
 package com.works.services;
 
 import com.works.entities.Books;
+import com.works.repositories.BooksRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
 public interface  BookService {
     Books findOne(String productId);
 

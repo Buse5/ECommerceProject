@@ -46,4 +46,6 @@ public class Books implements Serializable {
     @UpdateTimestamp
     private Date updateTime;
 
+    public Books(){}
+
 }

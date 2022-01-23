@@ -17,7 +17,7 @@ public class BookCategories implements Serializable {
 
     @Id
     @GeneratedValue
-    private Integer bcid;
+    private Integer bookCategoryid;
 
     private String categoryName;
 

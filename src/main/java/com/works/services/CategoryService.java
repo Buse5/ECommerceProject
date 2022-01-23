@@ -1,6 +1,9 @@
 package com.works.services;
 
 import com.works.entities.BookCategories;
+import com.works.repositories.BookCategoriesRepository;
+import com.works.repositories.BooksRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
