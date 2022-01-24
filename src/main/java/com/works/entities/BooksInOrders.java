@@ -20,11 +20,11 @@ public class BooksInOrders implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bookInOrderId;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     @JsonIgnore
     private Cart cart;
 
-    @ManyToOne()
+    @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name = "orderId")
     @JsonIgnore
     private Order orders;

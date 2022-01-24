@@ -24,7 +24,7 @@ public class Cart implements Serializable {
     @JsonIgnore
     private Users user;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "cart")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,mappedBy = "cart",  fetch = FetchType.LAZY)
     private Set<BooksInOrders> books = new HashSet<>();
 
     @Override

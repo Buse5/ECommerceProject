@@ -43,7 +43,7 @@ public class Users implements Serializable {
     @NotEmpty
     private String role="ROLE_CUSTOMER";
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
     @JsonIgnore
     private Cart cart;
 

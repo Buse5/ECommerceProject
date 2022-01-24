@@ -10,8 +10,8 @@ public interface BooksRepository extends JpaRepository<Books, String> {
     // On-Sale product
     Page<Books> findAllByBookStatusOrderByBookIdAsc(Integer bookStatus, Pageable pageable);
 
-    // Product in one category
-    Page<Books> findAllByCategoryTypeOrderByBookIdAsc(Integer bookCategoryType, Pageable pageable);
+    // Product in one category findAllByCategoryTypeOrderByBookIdAsc
+    Page<Books> findAllByCategoryTypeOrderByBookIdAsc(Integer categoryType, Pageable pageable);
 
     Page<Books> findAllByOrderByBookId(Pageable pageable);
 }

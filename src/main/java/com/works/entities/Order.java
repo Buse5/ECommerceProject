@@ -20,14 +20,13 @@ import java.util.Set;
 @NoArgsConstructor
 public class Order implements Serializable {
 
-    private static final long serialVersionUID = -3819883511505235030L;
+    private static final long serialVersionUID = 3819883511505235030L;
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders", fetch = FetchType.LAZY)
     private Set<BooksInOrders> books = new HashSet<>();
 
     @NotEmpty
