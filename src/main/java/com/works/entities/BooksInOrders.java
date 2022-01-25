@@ -38,6 +38,8 @@ public class BooksInOrders implements Serializable {
     @NotNull
     private String bookDescription;
 
+    private String bookIcon;
+
     @NotNull
     private BigDecimal bookPrice;
 
@@ -54,6 +56,7 @@ public class BooksInOrders implements Serializable {
         this.bookId = books.getBookId();
         this.bookName = books.getBookName();
         this.bookDescription = books.getBookDescription();
+        this.bookIcon = books.getBookIcon();
         this.bookPrice = books.getBookPrice();
         this.bookCategoryType = books.getCategoryType();
         this.bookStock = books.getBookStock();
@@ -67,6 +70,7 @@ public class BooksInOrders implements Serializable {
                 ", bookId='" + bookId + '\'' +
                 ", bookName='" + bookName + '\'' +
                 ", bookDescription='" + bookDescription + '\'' +
+                ", bookIcon='" + bookIcon + '\'' +
                 ", bookPrice=" + bookPrice +
                 ", bookCategoryType=" + bookCategoryType +
                 ", bookStock=" + bookStock +
@@ -83,12 +87,13 @@ public class BooksInOrders implements Serializable {
                 Objects.equals(bookId,that.bookId) &&
                 Objects.equals(bookName,that.bookName) &&
                 Objects.equals(bookDescription,that.bookDescription) &&
+                Objects.equals(bookIcon, that.bookIcon) &&
                 Objects.equals(bookPrice,that.bookPrice) &&
                 Objects.equals(bookCategoryType,that.bookCategoryType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookInOrderId, bookId, bookName, bookDescription, bookPrice, bookCategoryType);
+        return Objects.hash(bookInOrderId, bookId, bookName, bookIcon, bookDescription, bookPrice, bookCategoryType);
     }
 }

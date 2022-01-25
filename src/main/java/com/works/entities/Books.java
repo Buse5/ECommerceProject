@@ -30,6 +30,8 @@ public class Books implements Serializable {
 
     private String bookDescription;
 
+    private String bookIcon;
+
     @NotNull
     @Min(0)
     private Integer bookStock;
