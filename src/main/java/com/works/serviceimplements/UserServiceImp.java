@@ -54,9 +54,7 @@ public class UserServiceImp implements UserService {
 
         } catch (Exception e) {
             throw new OurException(ResultEnum.VALID_ERROR);
-
         }
-
     }
 
     @Override
