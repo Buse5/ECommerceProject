@@ -55,7 +55,7 @@ public class BooksInOrders implements Serializable {
         this.bookName = books.getBookName();
         this.bookDescription = books.getBookDescription();
         this.bookPrice = books.getBookPrice();
-        this.bookCategoryType = books.getBookCategoryType();
+        this.bookCategoryType = books.getCategoryType();
         this.bookStock = books.getBookStock();
         this.count = orderCount;
     }

@@ -101,7 +101,7 @@ public class BookServiceImp implements BookService {
     public Books update(Books books) {
 
         // if null throw exception
-        categoryService.findByCategoryType(books.getBookCategoryType());
+        categoryService.findByCategoryType(books.getCategoryType());
         if(books.getBookStatus() > 1) {
             throw new OurException(ResultEnum.BOOK_STATUS_ERROR);
         }

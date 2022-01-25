@@ -38,7 +38,7 @@ public class Books implements Serializable {
     private Integer bookStatus;
 
     @ColumnDefault("0")
-    private Integer bookCategoryType;
+    private Integer categoryType;
 
     @CreationTimestamp
     private Date createTime;

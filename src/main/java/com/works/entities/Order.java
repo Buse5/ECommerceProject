@@ -17,6 +17,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name="orders")
 @NoArgsConstructor
 public class Order implements Serializable {
 
